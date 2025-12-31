@@ -1,0 +1,1 @@
+web: gunicorn IMS_Project.wsgi

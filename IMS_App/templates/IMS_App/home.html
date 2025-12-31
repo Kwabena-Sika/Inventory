@@ -1,0 +1,14 @@
+{% extends 'IMS_App/base.html' %}
+
+{% block content %}
+
+ <div class="p-4 bg-light border rounded-3 container mt-5 pt-4">
+    <div class="container-fluid">
+       <h1 class="fw-bold mb-3">Welcome to Your Inventory Management System</h1>
+       <p class="lead text-muted mb-4">This Inventory Management System helps you easily manage your products, track stock levels, and organize supplier information in one place. It is designed to make inventory control simple, efficient, and reliable for everyday business operations.</p>
+       <a class="btn btn-primary btn-lg mt-1"
+        href="{% url 'IMS_App:Product_list' %}">View Product &raquo;</a>
+    </div>
+</div>
+
+{% endblock %}

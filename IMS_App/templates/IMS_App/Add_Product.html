@@ -1,0 +1,23 @@
+{% extends 'IMS_App/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<div class="container mt-5">
+<div class="row justify-content-center">
+  <div class="col-md-8 col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="text-center">Add Product</h1>
+        <form action="{% url 'IMS_App:Add_Product' %}" method="POST">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% bootstrap_button button_type="submit" content="Add Product" %}
+        </form>
+        {% endblock %} 
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

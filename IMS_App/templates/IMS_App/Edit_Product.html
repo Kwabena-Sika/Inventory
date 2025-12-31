@@ -1,0 +1,11 @@
+{% extends 'IMS_App/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h1 class="text-center">Edit Product</h1>
+<form action="{% url 'IMS_App:Edit_Product' product.product_id %}" method="POST">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% bootstrap_button button_type="submit" content="Save Changes" %}
+</form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'IMS_App/base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4 fw-bold">Products</h1>
+    <div class="table-responsive">
+       <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <!-- <th>Product ID</th> -->
+           <th>SKU</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Supplier</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <!-- <td class="fw-semibold">{{product.product_id}}</td> -->
+          <td class="text-muted">{{product.sku}}</td>
+          <td>{{product.name}}</td>
+          <td class="fw-bold">{{product.price}}</td>
+          <td>{{product.quantity}}</td>
+          <td>{{product.supplier}}</td>
+          <td>
+            <a href="{% url 'IMS_App:Edit_Product' product.product_id %}" class="btn btn-warning">Update</a>
+            <a href="{% url 'IMS_App:Delete_Product' product.product_id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="7" class="text-muted py-4">No Products available</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+   
+</div>
+
+
+{% endblock %}
